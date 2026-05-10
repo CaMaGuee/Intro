@@ -1,34 +1,15 @@
-var menuBtn = document.getElementById("menuBtn");
-var nav = document.getElementById("gnb");
 var navLinkList = document.querySelectorAll(".navLink");
 var header = document.querySelector(".header");
-var showItemList = document.querySelectorAll(".section, .textCard, .skillCard, .workCard, .contactCard, .profileCard");
+var showItemList = document.querySelectorAll(".section, .textCard, .skillCard, .workCard, .profileCard");
 
 var HEADER_SCROLL_POINT = 10;
 var ACTIVE_OFFSET = 140;
 
-function toggleMenu() {
-  if (nav.classList.contains("open")) {
-    nav.classList.remove("open");
-    menuBtn.classList.remove("open");
-    menuBtn.setAttribute("aria-expanded", "false");
-    menuBtn.setAttribute("aria-label", "메뉴 열기");
-  } else {
-    nav.classList.add("open");
-    menuBtn.classList.add("open");
-    menuBtn.setAttribute("aria-expanded", "true");
-    menuBtn.setAttribute("aria-label", "메뉴 닫기");
-  }
-}
-
-function closeMenu() {
-  nav.classList.remove("open");
-  menuBtn.classList.remove("open");
-  menuBtn.setAttribute("aria-expanded", "false");
-  menuBtn.setAttribute("aria-label", "메뉴 열기");
-}
-
 function updateHeader() {
+  if (!header) {
+    return;
+  }
+
   if (window.scrollY > HEADER_SCROLL_POINT) {
     header.classList.add("scrolled");
   } else {
@@ -76,24 +57,11 @@ function showOnScroll() {
   }
 }
 
-function handleLinkClick() {
-  var i;
-
-  for (i = 0; i < navLinkList.length; i++) {
-    navLinkList[i].addEventListener("click", function () {
-      closeMenu();
-    });
-  }
-}
-
 function initPage() {
   updateHeader();
   updateActiveLink();
   showOnScroll();
-  handleLinkClick();
 }
-
-menuBtn.addEventListener("click", toggleMenu);
 
 window.addEventListener("scroll", function () {
   updateHeader();
