@@ -1,6 +1,6 @@
 {
-    "name": "수익 기록기",
-    "short_name": "SKK",
+    "name": "CSKIM_INTRO",
+    "short_name": "CSIN",
     "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#f0f2f5",
