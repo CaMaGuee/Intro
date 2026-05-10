@@ -98,6 +98,523 @@ button {
   min-height: var(--headerHeight);
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.nav {
+  width: 100%;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  color: var(--subTextColor);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color var(--TRANSITION_TIME), background var(--TRANSITION_TIME);
+}
+
+.navLink:hover,
+.navLink.active {
+  color: var(--textColor);
+  background: rgba(17, 17, 17, 0.06);
+}
+
+.hero {
+  padding-top: 56px;
+  min-height: calc(100vh - var(--headerHeight));
+  display: flex;
+  align-items: center;
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--subTextColor);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: clamp(42px, 7vw, 84px);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+
+.heroDesc {
+  margin: 24px 0 0;
+  max-width: 620px;
+  color: var(--subTextColor);
+  font-size: clamp(17px, 2vw, 21px);
+}
+
+.profileCard {
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radiusLarge);
+  background: var(--surfaceColor);
+  box-shadow: 0 20px 60px var(--shadowColor);
+  backdrop-filter: blur(20px);
+}
+
+.profileImgBox {
+  overflow: hidden;
+  border-radius: 22px;
+  background: #e9eaee;
+  aspect-ratio: 4 / 4.8;
+}
+
+.profileImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileBody {
+  padding: 20px 8px 8px;
+}
+
+.cardLabel {
+  margin: 0 0 8px;
+  color: var(--subTextColor);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.cardText {
+  margin: 14px 0 0;
+  color: var(--subTextColor);
+  font-size: 15px;
+}
+
+.infoList {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 0;
+  border-top: 1px solid var(--lineColor);
+}
+
+.infoList li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--lineColor);
+}
+
+.infoKey {
+  color: var(--subTextColor);
+  font-size: 14px;
+}
+
+.infoValue {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.sectionDesc {
+  margin: 20px 0 0;
+  color: var(--subTextColor);
+  font-size: 18px;
+  max-width: 720px;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 42px;
+}
+
+.textCard,
+.skillCard,
+.workCard,
+.profileCard {
+  border-radius: var(--radiusMedium);
+  border: 1px solid var(--lineColor);
+  background: var(--surfaceStrong);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+}
+
+.textCard {
+  padding: 28px;
+}
+
+.cardHeading {
+  margin: 0 0 14px;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.textCard p {
+  margin: 0;
+  color: var(--subTextColor);
+  font-size: 16px;
+}
+
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 42px;
+}
+
+.sectionSideText {
+  margin: 0;
+  max-width: 420px;
+  color: var(--subTextColor);
+  font-size: 16px;
+}
+
+.skillGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.skillCard {
+  padding: 26px;
+  min-height: 190px;
+}
+
+.skillName {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.skillText {
+  margin: 14px 0 0;
+  color: var(--subTextColor);
+  font-size: 15px;
+}
+
+.workSection {
+  overflow: hidden;
+}
+
+.workGrid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.workCard {
+  padding: 32px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.92)),
+    #f8f8fb;
+}
+
+.largeCard {
+  min-height: 420px;
+}
+
+.workLabel {
+  margin: 0 0 10px;
+  color: var(--subTextColor);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.workTitle {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.workText {
+  margin: 14px 0 0;
+  max-width: 460px;
+  color: var(--subTextColor);
+  font-size: 16px;
+}
+
+.footer {
+  padding: 28px 0 36px;
+}
+
+.footerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border-top: 1px solid var(--lineColor);
+  padding-top: 20px;
+}
+
+.footerText,
+.topLink {
+  margin: 0;
+  color: var(--subTextColor);
+  font-size: 14px;
+}
+
+.topLink:hover {
+  color: var(--textColor);
+}
+
+.section,
+.textCard,
+.skillCard,
+.workCard,
+.profileCard {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.section.show,
+.textCard.show,
+.skillCard.show,
+.workCard.show,
+.profileCard.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 90px 0;
+  }
+
+  .heroInner,
+  .sectionHead,
+  .workGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroInner {
+    gap: 28px;
+  }
+
+  .skillGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .aboutGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .largeCard {
+    min-height: 320px;
+  }
+
+  .sectionHead {
+    display: grid;
+    align-items: start;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --headerHeight: 68px;
+  }
+
+  .wrap,
+  .narrowWrap {
+    width: min(100% - 24px, var(--maxWidth));
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+
+  .headerInner {
+    min-height: var(--headerHeight);
+    justify-content: flex-start;
+  }
+
+  .nav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .navList {
+    width: max-content;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 6px;
+    padding-bottom: 4px;
+  }
+
+  .navLink {
+    white-space: nowrap;
+    padding: 0 14px;
+  }
+
+  .hero {
+    padding-top: 32px;
+  }
+
+  .heroTitle {
+    font-size: clamp(38px, 12vw, 58px);
+  }
+
+  .heroDesc {
+    font-size: 16px;
+  }
+
+  .profileCard {
+    padding: 12px;
+    border-radius: 24px;
+  }
+
+  .profileImgBox {
+    border-radius: 18px;
+  }
+
+  .sectionTitle {
+    font-size: clamp(28px, 9vw, 40px);
+  }
+
+  .sectionDesc,
+  .sectionSideText,
+  .workText,
+  .textCard p,
+  .skillText {
+    font-size: 15px;
+  }
+
+  .skillGrid,
+  .workGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .skillCard,
+  .workCard,
+  .textCard {
+    padding: 24px;
+    min-height: auto;
+  }
+
+  .workTitle {
+    font-size: 28px;
+  }
+
+  .footerInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  font: inherit;
+}
+
+.skipLink {
+  position: absolute;
+  left: 12px;
+  top: -44px;
+  padding: 10px 14px;
+  background: #000000;
+  color: #ffffff;
+  border-radius: 10px;
+  z-index: 100;
+}
+
+.skipLink:focus {
+  top: 12px;
+}
+
+.wrap {
+  width: min(100% - 32px, var(--maxWidth));
+  margin: 0 auto;
+}
+
+.narrowWrap {
+  width: min(100% - 32px, 920px);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 110px 0;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(18px);
+  background: rgba(245, 245, 247, 0.72);
+  border-bottom: 1px solid transparent;
+  transition: background var(--TRANSITION_TIME), border-color var(--TRANSITION_TIME);
+}
+
+.header.scrolled {
+  border-color: var(--lineColor);
+  background: rgba(245, 245, 247, 0.82);
+}
+
+.headerInner {
+  min-height: var(--headerHeight);
+  display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 24px;
 }
