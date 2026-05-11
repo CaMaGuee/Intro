@@ -160,7 +160,7 @@ button {
 
 .heroTitle {
   margin: 0;
-  font-size: clamp(42px, 7vw, 84px);
+  font-size: clamp(40px, 7vw, 82px);
   line-height: 1.04;
   letter-spacing: -0.04em;
   font-weight: 800;
